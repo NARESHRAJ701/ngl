@@ -1,0 +1,539 @@
+/* ═══════════════════════════════════════════════════════════
+   PRODUCTS PAGE — Ingredient Universe
+   Sidebar + Dynamic Grid Layout
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Page Hero ── */
+.page-hero {
+  position: relative;
+  padding: 160px 0 100px;
+  background: linear-gradient(145deg, #04321C 0%, #0A5233 60%, #127a44 100%);
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(10, 82, 51, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(4, 50, 28, 0.3) 0%, transparent 50%);
+}
+
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.page-hero-label {
+  display: inline-block;
+  font-family: 'Inter', var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 16px;
+}
+
+.page-hero h1 {
+  font-family: 'Playfair Display', var(--font-heading);
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.page-hero p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.page-hero-curve {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  line-height: 0;
+}
+
+.page-hero-curve svg {
+  width: 100%;
+  height: 60px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INGREDIENT UNIVERSE — MAIN SECTION
+   ═══════════════════════════════════════════════════════════ */
+.iu-section {
+  padding: 60px 0 100px;
+  background: var(--light-bg);
+}
+
+.iu-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── Sidebar ── */
+.iu-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.iu-sidebar-title {
+  font-family: 'Inter', var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  padding-left: 16px;
+}
+
+.iu-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.iu-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  position: relative;
+}
+
+.iu-cat-btn:hover {
+  background: rgba(4, 50, 28, 0.06);
+  color: #0f3d2e;
+}
+
+.iu-cat-btn.active {
+  background: #0f3d2e;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(15, 61, 46, 0.25);
+}
+
+.iu-cat-btn.active svg {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.iu-cat-btn svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.iu-cat-count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.iu-cat-btn.active .iu-cat-count {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.iu-sidebar-info {
+  margin-top: 32px;
+  padding: 20px 16px;
+  background: rgba(4, 50, 28, 0.04);
+  border-radius: 12px;
+  border: 1px dashed rgba(4, 50, 28, 0.15);
+}
+
+.iu-sidebar-info p {
+  font-family: 'Inter', var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.iu-sidebar-info strong {
+  color: #0f3d2e;
+  font-weight: 600;
+}
+
+/* ── Content Header ── */
+.iu-content-header {
+  margin-bottom: 32px;
+}
+
+.iu-content-header h2 {
+  font-family: 'Playfair Display', var(--font-heading);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 500;
+  color: var(--text-dark);
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
+.iu-content-header p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Product Grid ── */
+.iu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  transition: opacity 0.2s ease;
+}
+
+.iu-grid.iu-grid-fade {
+  opacity: 0;
+}
+
+/* ── Product Card ── */
+.iu-card {
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.iu-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.iu-card-img {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.iu-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.iu-card:hover .iu-card-img img {
+  transform: scale(1.05);
+}
+
+/* Dark gradient overlay */
+.iu-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+  pointer-events: none;
+}
+
+/* Product name — bottom left */
+.iu-card-name {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  font-family: 'Inter', var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* Badge — top right */
+.iu-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: 'Inter', var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(15, 61, 46, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BOTTOM CTA
+   ═══════════════════════════════════════════════════════════ */
+.iu-cta {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.iu-cta-inner {
+  background: linear-gradient(145deg, #04321C, #0A5233);
+  border-radius: 24px;
+  padding: 56px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.iu-cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.iu-cta-inner::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 30%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.iu-cta-text {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+}
+
+.iu-cta-text h2 {
+  font-family: 'Playfair Display', var(--font-heading);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.iu-cta-text p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+}
+
+.btn-cta-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: #ffffff;
+  color: #04321C;
+  font-family: 'Inter', var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-cta-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta-contact svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-cta-contact:hover svg {
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .iu-layout {
+    grid-template-columns: 220px 1fr;
+    gap: 28px;
+  }
+
+  .iu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 120px 0 60px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .page-hero p {
+    font-size: 14px;
+  }
+
+  .page-hero-curve svg {
+    height: 36px;
+  }
+
+  .iu-section {
+    padding: 40px 0 60px;
+  }
+
+  .iu-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .iu-sidebar {
+    position: static;
+  }
+
+  .iu-categories {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .iu-cat-btn {
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 13px;
+    flex-shrink: 0;
+    border-radius: 10px;
+  }
+
+  .iu-sidebar-info {
+    display: none;
+  }
+
+  .iu-sidebar-title {
+    display: none;
+  }
+
+  .iu-content-header h2 {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+
+  .iu-content-header p {
+    font-size: 14px;
+  }
+
+  .iu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .iu-card-img {
+    height: 160px;
+  }
+
+  .iu-card-name {
+    font-size: 13px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .iu-card-badge {
+    font-size: 8px;
+    padding: 3px 8px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .iu-cta {
+    padding: 48px 0;
+  }
+
+  .iu-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 36px 24px;
+    gap: 20px;
+  }
+
+  .iu-cta-text {
+    max-width: 100%;
+  }
+
+  .iu-cta-text h2 {
+    font-size: clamp(22px, 5vw, 28px);
+  }
+
+  .iu-cta-text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 100px 0 48px;
+  }
+
+  .page-hero h1 {
+    font-size: 26px;
+  }
+
+  .iu-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .iu-card-img {
+    height: 140px;
+  }
+
+  .iu-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+}
+

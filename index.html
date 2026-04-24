@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrigain Labs — Build Your Food Brand</title>
+  <meta name="description"
+    content="Nutrigain Labs offers custom manufacturing, packaging, and private labeling of healthy snacks, dry fruits, and more. Build your food brand with us." />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <nav class="nav-left" id="navLeft">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+      </nav>
+
+      <a href="index.html" class="header-logo" id="headerLogo">
+        <img src="images/header-logo.png" alt="Nutrigrain Labs" class="header-logo-img" />
+      </a>
+
+      <nav class="nav-right" id="navRight">
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Mobile slide-out menu -->
+    <nav class="nav-mobile" id="navMobile">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-typing anim-fade-up">
+          <span class="typing-text">We are a Food Manufacturer</span>
+        </div>
+        <h1 class="anim-fade-up anim-delay-1">Build Your Food Brand. We Handle Backend.</h1>
+        <p class="hero-text anim-fade-up anim-delay-2">Your one-stop partner for custom manufacturing, packaging, and
+          private labeling of healthy snacks, dry fruits, and more.</p>
+        <div class="hero-buttons anim-fade-up anim-delay-3">
+          <a href="contact.html" class="btn-primary">
+            Start Your Brand
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+          <a href="products.html" class="btn-secondary">Explore Products</a>
+        </div>
+      </div>
+      <div class="hero-visual anim-slide-right">
+        <div class="hero-image-wrapper">
+          <img src="images/hero-almonds.png" alt="Premium almonds and nuts in a rustic bowl" />
+        </div>
+        <div class="hero-floating-badge badge-products">
+          <span class="badge-number">450+</span>
+          <span class="badge-label">Products</span>
+        </div>
+        <div class="hero-floating-badge badge-natural">
+          <span class="badge-percent">100%</span>
+          <span class="badge-label">Natural</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-curve">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 120L0 60C240 20 480 0 720 0C960 0 1200 20 1440 60L1440 120Z" fill="#F5F5F2" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT CATEGORIES ===== -->
+  <section class="categories" id="categories">
+    <!-- Floating food elements for parallax -->
+    <div class="cat-float cat-float-1" data-speed="0.3">🌾</div>
+    <div class="cat-float cat-float-2" data-speed="0.5">🌿</div>
+    <div class="cat-float cat-float-3" data-speed="0.35">🌶️</div>
+    <div class="cat-float cat-float-4" data-speed="0.45">🥜</div>
+    <div class="cat-float cat-float-5" data-speed="0.3">🫘</div>
+    <div class="cat-float cat-float-6" data-speed="0.5">🍂</div>
+    <div class="cat-float cat-float-7" data-speed="0.4">✦</div>
+    <div class="cat-float cat-float-8" data-speed="0.35">🌰</div>
+
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal">Product Categories</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Explore our wide range of premium ingredients and products</p>
+      </div>
+      <div class="categories-grid-wrapper">
+        <div class="categories-grid">
+          <div class="category-card reveal">
+            <div class="category-img">
+              <img src="images/cat-grains.png" alt="Grains and Cereals" />
+            </div>
+            <h3>Grains &amp; Cereals</h3>
+            <p>Premium rice, wheat, and cereal varieties</p>
+          </div>
+          <div class="category-card reveal reveal-delay-1">
+            <div class="category-img">
+              <img src="images/cat-pulses.png" alt="Pulses" />
+            </div>
+            <h3>Pulses</h3>
+            <p>Lentils, dals, and split pulses</p>
+          </div>
+          <div class="category-card reveal reveal-delay-2">
+            <div class="category-img">
+              <img src="images/cat-legumes.png" alt="Legumes and Whole Pulses" />
+            </div>
+            <h3>Legumes &amp; Whole Pulses</h3>
+            <p>Kidney beans, chickpeas, and whole moong</p>
+          </div>
+          <div class="category-card reveal reveal-delay-3">
+            <div class="category-img">
+              <img src="images/cat-millets.png" alt="Millets" />
+            </div>
+            <h3>Millets</h3>
+            <p>Ragi, bajra, jowar, and foxtail millet</p>
+          </div>
+          <div class="category-card reveal reveal-delay-4">
+            <div class="category-img">
+              <img src="images/cat-spices.png" alt="Spices" />
+            </div>
+            <h3>Spices</h3>
+            <p>Authentic flavors from across the nation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRIVATE LABEL SECTION ===== -->
+  <section class="private-label" id="private-label">
+    <div class="container">
+      <div class="pl-content reveal-left">
+        <span class="section-label">Private Labeling</span>
+        <h2 class="section-title-dark">Launch your own food brand<br><em>effortlessly.</em></h2>
+        <p class="pl-text">From sourcing premium ingredients to designing your catchy packaging, we handle
+          every step of bringing your food brand to life. Focus on growing your business while
+          we take care of production.</p>
+        <div class="pl-features">
+          <div class="pl-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="16 12 12 8 8 12" />
+              <line x1="12" y1="16" x2="12" y2="8" />
+            </svg>
+            Custom manufacturing
+          </div>
+          <div class="pl-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="M9 21V9" />
+            </svg>
+            Packaging design
+          </div>
+          <div class="pl-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Branding support
+          </div>
+          <div class="pl-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+            Bulk production
+          </div>
+        </div>
+        <a href="contact.html" class="btn-outline-dark">
+          Start Private Labeling
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <div class="pl-visual reveal-right">
+        <div class="pl-image-wrapper">
+          <img src="images/private-label.jpg" alt="Premium Private Label Pouch Packaging" />
+          <div class="pl-image-tag">Premium Quality</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BRAND SECTION (DARK GREEN) ===== -->
+  <section class="brand-section" id="brand">
+    <div class="container">
+      <div class="brand-header reveal">
+        <h2>More Than Manufacturing —<br>We Build Brands</h2>
+        <p>At Nutrigain Labs, it's not just about creating exceptional food products that nourish and
+          delight. Our commitment to quality sourcing, innovative processing, and sustainable practices
+          ensures your product will be a story of trust, authenticity, and care.</p>
+      </div>
+      <div class="brand-strips">
+        <div class="brand-strip brand-strip-1 reveal">
+          <img src="images/brand-1.png" alt="Food manufacturing facility" />
+        </div>
+        <div class="brand-strip brand-strip-2 reveal">
+          <img src="images/brand-2.png" alt="Grain sorting process" />
+        </div>
+        <div class="brand-strip brand-strip-3 reveal">
+          <img src="images/brand-3.png" alt="Packaged food products" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS SECTION ===== -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal">Our Impact in Numbers</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Trusted by brands across the nation</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+          </div>
+          <div class="stat-number" data-target="866666" data-suffix="+">0</div>
+          <div class="stat-label">Packs Produced</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            </svg>
+          </div>
+          <div class="stat-number" data-target="195" data-suffix="+">0</div>
+          <div class="stat-label">Products</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div class="stat-number" data-target="0" data-text="0.0L+">0.0L+</div>
+          <div class="stat-label">Sq Ft Facility</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div class="stat-number" data-target="43" data-suffix="+">0</div>
+          <div class="stat-label">Employees</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="certifications" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="cert-title reveal">Certified for Quality &amp; Safety</h2>
+        <div class="cert-divider reveal reveal-delay-1"></div>
+        <p class="cert-subtitle reveal reveal-delay-1">We adhere to the highest industry standards in food safety and
+          quality.</p>
+      </div>
+      <div class="cert-grid reveal reveal-delay-2">
+
+        <!-- FSSAI -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <img src="images/cert-fssai.png" alt="FSSAI Certified" />
+          </div>
+          <h3 class="cert-name">FSSAI</h3>
+          <p class="cert-label">Food Safety &amp; Standards Authority</p>
+        </div>
+
+        <!-- ISO 9001 -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <img src="images/cert-iso9001.jpg" alt="ISO 9001 Certified" />
+          </div>
+          <h3 class="cert-name">ISO 9001</h3>
+          <p class="cert-label">Quality Management System</p>
+        </div>
+
+        <!-- ISO 22000 -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <img src="images/cert-iso22000.png" alt="ISO 22000 Certified" />
+          </div>
+          <h3 class="cert-name">ISO 22000</h3>
+          <p class="cert-label">Food Safety Management</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2>Ready to Launch Your Food Brand?</h2>
+        <p>Join hundreds of successful brands that trust Nutrigain Labs for their manufacturing needs. Let's
+          create something amazing together.</p>
+        <div class="cta-buttons" style="justify-content: center;">
+          <a href="contact.html" class="btn-primary-dark">Talk to Us</a>
+        </div>
+        <div class="cta-tags">
+          <span>✓ Free Consultation</span>
+          <span>✓ Custom Solutions</span>
+          <span>✓ Quick Turnaround</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <img src="images/footer-logo.png" alt="Nutrigrain Labs" class="footer-logo-img" />
+          </a>
+          <p class="footer-desc">Building the most trusted food manufacturing and private labeling company in India, one
+            brand at a time.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Packaging Design</a>
+          <a href="contact.html">Bulk Orders</a>
+          <a href="contact.html">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="products.html">Contract Manufacturing</a>
+          <a href="products.html">Private Labeling</a>
+          <a href="products.html">Quality Testing</a>
+          <a href="products.html">Supply Chain</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <a href="https://wa.me/919950895333" target="_blank">WhatsApp</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="mailto:info@nutrigainlabs.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nutrigain Labs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

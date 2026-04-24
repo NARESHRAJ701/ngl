@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrigrain Labs — Ingredient Universe</title>
+  <meta name="description"
+    content="Explore Nutrigrain Labs' premium collection of grains, pulses, legumes, millets, and spices — sourced and processed with precision." />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="products.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <nav class="nav-left" id="navLeft">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+      </nav>
+
+      <a href="index.html" class="header-logo" id="headerLogo">
+        <img src="images/header-logo.png" alt="Nutrigrain Labs" class="header-logo-img" />
+      </a>
+
+      <nav class="nav-right" id="navRight">
+        <a href="products.html" class="active">Products</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Mobile slide-out menu -->
+    <nav class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="page-hero-label anim-fade-up">Premium Ingredients</span>
+        <h1 class="anim-fade-up anim-delay-1">Ingredient Universe</h1>
+        <p class="anim-fade-up anim-delay-2">Explore our premium collection of grains, pulses, millets, and spices —
+          sourced from India's finest agricultural regions.</p>
+      </div>
+    </div>
+    <div class="page-hero-curve">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 80L0 40C360 10 720 0 1080 10C1260 15 1380 25 1440 40L1440 80Z" fill="#F5F5F2" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== INGREDIENT UNIVERSE ===== -->
+  <section class="iu-section" id="ingredients">
+    <div class="container">
+      <div class="iu-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="iu-sidebar">
+          <h3 class="iu-sidebar-title">Categories</h3>
+          <nav class="iu-categories" id="iuCategories">
+            <button class="iu-cat-btn active" data-category="grains">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+              Grains & Cereals
+              <span class="iu-cat-count">5</span>
+            </button>
+            <button class="iu-cat-btn" data-category="pulses">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 12a4 4 0 0 1 8 0" />
+              </svg>
+              Pulses
+              <span class="iu-cat-count">6</span>
+            </button>
+            <button class="iu-cat-btn" data-category="legumes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                <ellipse cx="12" cy="12" rx="8" ry="5" />
+              </svg>
+              Legumes & Whole Pulses
+              <span class="iu-cat-count">6</span>
+            </button>
+            <button class="iu-cat-btn" data-category="millets">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                <path d="M12 22V8M5 12l7-4 7 4M5 16l7-4 7 4" />
+              </svg>
+              Millets
+              <span class="iu-cat-count">8</span>
+            </button>
+            <button class="iu-cat-btn" data-category="spices">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              Spices
+              <span class="iu-cat-count">3</span>
+            </button>
+          </nav>
+
+          <div class="iu-sidebar-info">
+            <p>All products available for<br><strong>Private Labeling</strong></p>
+          </div>
+        </aside>
+
+        <!-- RIGHT PRODUCT GRID -->
+        <div class="iu-content">
+          <div class="iu-content-header">
+            <h2 id="iuTitle">Grains & Cereals</h2>
+            <p id="iuSubtitle">Premium quality grains sourced from India's finest agricultural regions</p>
+          </div>
+          <div class="iu-grid" id="iuGrid">
+            <!-- Cards injected by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOTTOM CTA ===== -->
+  <section class="iu-cta">
+    <div class="container">
+      <div class="iu-cta-inner reveal">
+        <div class="iu-cta-text">
+          <h2>Looking for Custom Blends?</h2>
+          <p>We can create custom ingredient mixes tailored to your brand — from unique spice blends to multi-grain
+            formulations.</p>
+        </div>
+        <a href="contact.html" class="btn-cta-contact">
+          Request Custom Mix
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <img src="images/footer-logo.png" alt="Nutrigrain Labs" class="footer-logo-img" />
+          </a>
+          <p class="footer-desc">Redefining industrial food processing with precision, technology, and global standards.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Capabilities</h4>
+          <a>Manufacturing</a>
+          <a>Private Labeling</a>
+          <a>R&D Lab</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compliance</h4>
+          <a>FSSAI Certified</a>
+          <a>Export Standards</a>
+          <a>Manufacturing</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="https://wa.me/919950895333" target="_blank">WhatsApp</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="mailto:info@nutrigainlabs.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Nutrigain Labs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // ── Product Data ──
+    const productData = {
+      grains: {
+        title: "Grains & Cereals",
+        subtitle: "Premium quality grains sourced from India's finest agricultural regions",
+        products: [
+          { name: "Wheat", img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=500&fit=crop" },
+          { name: "Rice", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=500&fit=crop" },
+          { name: "Maize", img: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=600&h=500&fit=crop" },
+          { name: "Barley", img: "https://images.unsplash.com/photo-1777000509637-1137fcb6f44a?w=600&h=500&fit=crop" },
+          { name: "Poha", img: "https://images.unsplash.com/photo-1777000298649-1020178de90e?w=600&h=500&fit=crop" }
+        ]
+      },
+      pulses: {
+        title: "Pulses",
+        subtitle: "High-protein staples processed with multi-stage cleaning and sorting",
+        products: [
+          { name: "Chana Dal", img: "https://images.unsplash.com/photo-1777000347542-45454d81adb3??w=600&h=500&fit=crop" },
+          { name: "Toor Dal (Arhar)", img: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=600&h=500&fit=crop" },
+          { name: "Moong Dal", img: "https://plus.unsplash.com/premium_photo-1674025751520-01102eca6352?w=600&h=500&fit=crop" },
+          { name: "Urad Dal", img: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=500&fit=crop" },
+          { name: "Masoor Dal", img: "https://plus.unsplash.com/premium_photo-1701064865216-4306843a809f?w=600&h=500&fit=crop" },
+          { name: "Mix Dal Blends", img: "https://images.unsplash.com/photo-1585996068879-3c34bba5a4c0?w=600&h=500&fit=crop" }
+        ]
+      },
+      legumes: {
+        title: "Legumes & Whole Pulses",
+        subtitle: "Whole legumes and pulses for diverse culinary and industrial applications",
+        products: [
+          { name: "Peanut", img: "https://plus.unsplash.com/premium_photo-1726072356924-e29e8999df09?w=600&h=500&fit=crop" },
+          { name: "Kabuli Chana", img: "https://images.unsplash.com/photo-1777000347542-45454d81adb3?w=600&h=500&fit=crop" },
+          { name: "Desi Chana", img: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=600&h=500&fit=crop" },
+          { name: "Whole Moong", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=500&fit=crop" },
+          { name: "Whole Urad", img: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=500&fit=crop" },
+          { name: "Vatana (Peas)", img: "https://images.unsplash.com/photo-1777016806026-cae8c0f9cf90?w=600&h=500&fit=crop" }
+        ]
+      },
+      millets: {
+        title: "Millets",
+        subtitle: "The super-grain series — ancient grains for modern nutrition",
+        products: [
+          { name: "Bajra (Pearl Millet)", img: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=500&fit=crop" },
+          { name: "Jowar (Sorghum)", img: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=600&h=500&fit=crop" },
+          { name: "Ragi (Finger Millet)", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=500&fit=crop" },
+          { name: "Foxtail Millet", img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=500&fit=crop" },
+          { name: "Little Millet", img: "https://images.unsplash.com/photo-1777016722334-f569eb436607?w=600&h=500&fit=crop" },
+          { name: "Barnyard Millet", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=500&fit=crop" },
+          { name: "Kodo Millet", img: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=500&fit=crop" },
+          { name: "Proso Millet", img: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=600&h=500&fit=crop" }
+        ]
+      },
+      spices: {
+        title: "Spices",
+        subtitle: "Purity-tested aromatic seeds for international markets and domestic processing",
+        products: [
+          { name: "Jeera (Cumin Seeds)", img: "https://plus.unsplash.com/premium_photo-1725646220374-cef10998bd8b?w=600&h=500&fit=crop" },
+          { name: "Saunf (Fennel Seeds)", img: "https://images.unsplash.com/photo-1701189975806-97b11541ec82?w=600&h=500&fit=crop" },
+          { name: "Methi (Fenugreek Seeds)", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=500&fit=crop" }
+        ]
+      }
+    };
+
+    // ── DOM refs ──
+    const catBtns = document.querySelectorAll('.iu-cat-btn');
+    const grid = document.getElementById('iuGrid');
+    const titleEl = document.getElementById('iuTitle');
+    const subtitleEl = document.getElementById('iuSubtitle');
+
+    function renderCategory(key) {
+      const cat = productData[key];
+      if (!cat) return;
+
+      // Update header
+      titleEl.textContent = cat.title;
+      subtitleEl.textContent = cat.subtitle;
+
+      // Fade out
+      grid.classList.add('iu-grid-fade');
+
+      setTimeout(() => {
+        // Build cards
+        grid.innerHTML = cat.products.map(p => `
+          <div class="iu-card">
+            <div class="iu-card-img">
+              <img src="${p.img}" alt="${p.name}" loading="lazy" />
+              <div class="iu-card-overlay"></div>
+              <span class="iu-card-name">${p.name}</span>
+              <span class="iu-card-badge">Private Label</span>
+            </div>
+          </div>
+        `).join('');
+
+        // Fade in
+        requestAnimationFrame(() => {
+          grid.classList.remove('iu-grid-fade');
+        });
+      }, 200);
+
+      // Update active button
+      catBtns.forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`[data-category="${key}"]`)?.classList.add('active');
+    }
+
+    // ── Event listeners ──
+    catBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        renderCategory(btn.dataset.category);
+      });
+    });
+
+    // ── Initial render ──
+    renderCategory('grains');
+  </script>
+
+</body>
+
+</html>
