@@ -694,6 +694,166 @@ p {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   SOLUTIONS — SPLIT LAYOUT (Image Left + Features Right)
+   ═══════════════════════════════════════════════════════════ */
+.solutions {
+  padding: var(--section-padding);
+  background: #f8f9f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.sol-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ── Left: Image ── */
+.sol-visual {
+  position: relative;
+}
+
+.sol-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.sol-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Right: Content ── */
+.sol-content {
+  max-width: 520px;
+}
+
+.sol-subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
+/* ── Feature List ── */
+.sol-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.sol-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--white);
+  border-radius: 14px;
+  border: 1px solid rgba(17, 55, 33, 0.06);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.35s var(--ease),
+              box-shadow 0.35s var(--ease),
+              border-color 0.35s var(--ease);
+}
+
+.sol-feature:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(17, 55, 33, 0.08);
+  border-color: rgba(17, 55, 33, 0.14);
+}
+
+/* ── Feature Icon ── */
+.sol-feature-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 55, 33, 0.07);
+  border-radius: 50%;
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.sol-feature:hover .sol-feature-icon {
+  background: rgba(17, 55, 33, 0.12);
+  transform: scale(1.06);
+}
+
+.sol-feature-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #113721;
+}
+
+/* ── Feature Text ── */
+.sol-feature-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sol-feature-text h3 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #113721;
+  margin-bottom: 4px;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.sol-feature-text p {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── CTA Button ── */
+.btn-solutions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #113721;
+  background: transparent;
+  border: 1.5px solid #113721;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.35s var(--ease);
+}
+
+.btn-solutions:hover {
+  background: #113721;
+  color: var(--text-white);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(17, 55, 33, 0.18);
+}
+
+.btn-solutions svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s var(--ease);
+}
+
+.btn-solutions:hover svg {
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════════════════════════
    PRODUCT CATEGORIES — Enhanced
    ═══════════════════════════════════════════════════════════ */
 .categories {
@@ -1694,6 +1854,11 @@ p {
     gap: 48px;
   }
 
+  .sol-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .brand-strips {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1789,6 +1954,48 @@ p {
 
   .hero-curve svg {
     height: 40px;
+  }
+
+  /* ── Solutions (split → stacked) ── */
+  .solutions {
+    padding: 60px 0 50px;
+  }
+
+  .sol-split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sol-image-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .sol-subtitle {
+    font-size: 14px;
+  }
+
+  .sol-feature {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .sol-feature-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sol-feature-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sol-feature-text h3 {
+    font-size: 14px;
+  }
+
+  .sol-feature-text p {
+    font-size: 12px;
   }
 
   /* ── Categories ── */
