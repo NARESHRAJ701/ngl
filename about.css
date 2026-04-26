@@ -411,13 +411,13 @@
    SECTION 4: WHY CHOOSE US
    ═══════════════════════════════════════════════════════════ */
 .about-why {
-  padding: 100px 0;
+  padding: 50px 0 40px;
   background: #ffffff;
 }
 
 .about-why-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 24px;
 }
 
 .about-why-header h2 {
@@ -431,13 +431,13 @@
 .about-why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 18px;
 }
 
 .about-why-card {
   text-align: center;
-  padding: 40px 24px;
-  border-radius: 16px;
+  padding: 28px 20px 24px;
+  border-radius: 14px;
   background: #F8F7F4;
   border: 1px solid transparent;
   transition: all 0.2s ease;
@@ -487,14 +487,14 @@
    SECTION 5: CTA
    ═══════════════════════════════════════════════════════════ */
 .about-cta {
-  padding: 80px 0;
+  padding: 30px 0 0;
   background: #ffffff;
 }
 
 .about-cta-inner {
   background: linear-gradient(155deg, #04321C 0%, #113721 50%, #0A5233 100%);
-  border-radius: 24px;
-  padding: 72px 52px;
+  border-radius: 18px;
+  padding: 48px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -558,17 +558,17 @@
    FOOTER TAGLINE
    ═══════════════════════════════════════════════════════════ */
 .about-tagline {
-  padding: 48px 0;
-  background: #F8F7F4;
+  padding: 24px 0;
+  background: #ffffff;
   text-align: center;
 }
 
 .about-tagline-text {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 500;
   font-style: italic;
-  color: rgba(17, 55, 33, 0.35);
+  color: rgba(17, 55, 33, 0.2);
   letter-spacing: 0.5px;
 }
 
@@ -620,11 +620,11 @@
   }
 
   .about-why {
-    padding: 60px 0;
+    padding: 40px 0 30px;
   }
 
   .about-why-header {
-    margin-bottom: 36px;
+    margin-bottom: 20px;
   }
 
   .about-why-grid {
@@ -731,12 +731,12 @@
   }
 
   .about-cta {
-    padding: 48px 0;
+    padding: 24px 0 0;
   }
 
   .about-cta-inner {
-    padding: 40px 24px;
-    border-radius: 16px;
+    padding: 32px 20px;
+    border-radius: 14px;
   }
 
   .about-cta-inner h2 {
@@ -744,7 +744,7 @@
   }
 
   .about-tagline {
-    padding: 32px 0;
+    padding: 20px 0;
   }
 }
 
