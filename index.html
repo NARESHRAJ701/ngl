@@ -117,35 +117,35 @@
       </div>
       <div class="categories-grid-wrapper">
         <div class="categories-grid">
-          <div class="category-card reveal">
+          <div class="category-card reveal" data-category="grains">
             <div class="category-img">
               <img src="images/cat-grains.png" alt="Grains and Cereals" />
             </div>
             <h3>Grains &amp; Cereals</h3>
             <p>Premium rice, wheat, and cereal varieties</p>
           </div>
-          <div class="category-card reveal reveal-delay-1">
+          <div class="category-card reveal reveal-delay-1" data-category="pulses">
             <div class="category-img">
               <img src="images/cat-pulses.png" alt="Pulses" />
             </div>
             <h3>Pulses</h3>
             <p>Lentils, dals, and split pulses</p>
           </div>
-          <div class="category-card reveal reveal-delay-2">
+          <div class="category-card reveal reveal-delay-2" data-category="legumes">
             <div class="category-img">
               <img src="images/cat-legumes.png" alt="Legumes and Whole Pulses" />
             </div>
             <h3>Legumes &amp; Whole Pulses</h3>
             <p>Kidney beans, chickpeas, and whole moong</p>
           </div>
-          <div class="category-card reveal reveal-delay-3">
+          <div class="category-card reveal reveal-delay-3" data-category="millets">
             <div class="category-img">
               <img src="images/cat-millets.png" alt="Millets" />
             </div>
             <h3>Millets</h3>
             <p>Ragi, bajra, jowar, and foxtail millet</p>
           </div>
-          <div class="category-card reveal reveal-delay-4">
+          <div class="category-card reveal reveal-delay-4" data-category="spices">
             <div class="category-img">
               <img src="images/cat-spices.png" alt="Spices" />
             </div>
@@ -417,6 +417,19 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const categoryCards = document.querySelectorAll('.category-card[data-category]');
+      categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const category = card.dataset.category;
+          if (category) {
+            window.location.href = `products.html?category=${category}`;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -340,7 +340,10 @@
     });
 
     // ── Initial render ──
-    renderCategory('grains');
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    const initialCategory = categoryParam && productData[categoryParam] ? categoryParam : 'grains';
+    renderCategory(initialCategory);
   </script>
 
 </body>
