@@ -123,16 +123,106 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(counter => counterObserver.observe(counter));
   }
 
-  // ── Hero Parallax ──
+  // ── Hero Parallax + Leaf System ──
   const hero = document.querySelector('.hero');
   if (hero) {
     const heroVisual = hero.querySelector('.hero-visual');
+    const heroLeaves = document.querySelectorAll('.hero-leaf');
+
+    // Base transforms for each leaf (rotation, scale from CSS)
+    const leafConfig = {
+      heroLeafTL: { baseRotate: -20, baseScale: 0.9, baseOpacity: 0.85 },
+      heroLeafTR: { baseRotate: 28, baseScale: 1, baseOpacity: 1 },
+      heroLeafBR: { baseRotate: 15, baseScale: 0.85, baseOpacity: 0.75 },
+    };
+
+    let scrollTicking = false;
+
+    // Scroll parallax for hero visual + all leaves
     window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      if (scrolled < window.innerHeight && heroVisual) {
-        heroVisual.style.transform = `translateY(${scrolled * 0.06}px)`;
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          const scrolled = window.pageYOffset;
+          if (scrolled < window.innerHeight) {
+            // Hero image parallax
+            if (heroVisual) {
+              heroVisual.style.transform = `translateY(${scrolled * 0.06}px)`;
+            }
+
+            const scrollFactor = scrolled / window.innerHeight;
+
+            // Individual leaf parallax
+            heroLeaves.forEach(leaf => {
+              const id = leaf.id;
+              const config = leafConfig[id];
+              if (!config) return;
+
+              const pxFactor = parseFloat(leaf.dataset.parallaxX) || 0;
+              const pyFactor = parseFloat(leaf.dataset.parallaxY) || 0;
+              const moveX = scrolled * pxFactor;
+              const moveY = scrolled * pyFactor;
+              const rotShift = scrollFactor * 8 * (pxFactor > 0 ? 1 : -1);
+              const fadeOut = Math.max(config.baseOpacity - scrollFactor * 0.9, 0);
+
+              leaf.style.transform =
+                `rotate(${config.baseRotate + rotShift}deg) scale(${config.baseScale}) translate(${moveX}px, ${moveY}px)`;
+              leaf.style.opacity = fadeOut;
+
+              // Pause CSS animation during scroll
+              if (scrolled > 5 && !leaf.classList.contains('leaf-parallax')) {
+                leaf.classList.add('leaf-parallax');
+              } else if (scrolled <= 5) {
+                leaf.classList.remove('leaf-parallax');
+                leaf.style.transform = '';
+                leaf.style.opacity = '';
+              }
+            });
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
       }
     }, { passive: true });
+
+    // Mouse-tracking tilt interaction for leaves
+    if (heroLeaves.length > 0) {
+      // Different mouse sensitivity per leaf
+      const mouseSensitivity = {
+        heroLeafTL: { tilt: 4, drift: 3 },
+        heroLeafTR: { tilt: 8, drift: 5 },
+        heroLeafBR: { tilt: 3, drift: 2 },
+      };
+
+      hero.addEventListener('mousemove', (e) => {
+        if (window.pageYOffset > 10) return;
+        const rect = hero.getBoundingClientRect();
+        const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+        const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+
+        heroLeaves.forEach(leaf => {
+          const id = leaf.id;
+          const config = leafConfig[id];
+          const sens = mouseSensitivity[id];
+          if (!config || !sens) return;
+
+          const driftX = mouseX * sens.drift;
+          const driftY = mouseY * sens.drift;
+          const rotDrift = mouseX * sens.tilt * 0.5;
+
+          leaf.style.transform =
+            `rotate(${config.baseRotate + rotDrift}deg) scale(${config.baseScale}) translate(${driftX}px, ${driftY}px)`;
+        });
+      });
+
+      hero.addEventListener('mouseleave', () => {
+        if (window.pageYOffset <= 10) {
+          heroLeaves.forEach(leaf => {
+            leaf.style.transform = '';
+            leaf.classList.remove('leaf-parallax');
+          });
+        }
+      });
+    }
   }
 
   // ── Smooth scroll for anchor links ──
