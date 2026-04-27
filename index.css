@@ -1916,7 +1916,7 @@ p {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.7s var(--ease);
+  transition: all 0.2s var(--ease);
 }
 
 .reveal.visible {
@@ -1971,7 +1971,7 @@ p {
 .anim-fade-up {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeUp 0.8s var(--ease) forwards;
+  animation: fadeUp 0.2s var(--ease) forwards;
 }
 
 .anim-delay-1 {
