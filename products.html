@@ -72,51 +72,70 @@
     </div>
   </section>
 
+  <!-- ===== PRODUCT CATEGORIES ===== -->
+  <section class="categories" id="categories">
+    <!-- Floating food elements for parallax -->
+    <div class="cat-float cat-float-1" data-speed="0.3">🌾</div>
+    <div class="cat-float cat-float-2" data-speed="0.5">🌿</div>
+    <div class="cat-float cat-float-3" data-speed="0.35">🌶️</div>
+    <div class="cat-float cat-float-4" data-speed="0.45">🥜</div>
+    <div class="cat-float cat-float-5" data-speed="0.3">🫘</div>
+    <div class="cat-float cat-float-6" data-speed="0.5">🍂</div>
+    <div class="cat-float cat-float-7" data-speed="0.4">✦</div>
+    <div class="cat-float cat-float-8" data-speed="0.35">🌰</div>
+
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal">Product Categories</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Explore our wide range of premium ingredients and products</p>
+      </div>
+      <div class="categories-grid-wrapper">
+        <div class="categories-grid">
+          <div class="category-card reveal" data-category="grains">
+            <div class="category-img">
+              <img src="images/cat-grains.png" alt="Grains and Cereals" />
+            </div>
+            <h3>Grains &amp; Cereals</h3>
+            <p>Premium rice, wheat, and cereal varieties</p>
+          </div>
+          <div class="category-card reveal reveal-delay-1" data-category="pulses">
+            <div class="category-img">
+              <img src="images/cat-pulses.png" alt="Pulses" />
+            </div>
+            <h3>Pulses</h3>
+            <p>Lentils, dals, and split pulses</p>
+          </div>
+          <div class="category-card reveal reveal-delay-2" data-category="legumes">
+            <div class="category-img">
+              <img src="images/cat-legumes.png" alt="Legumes and Whole Pulses" />
+            </div>
+            <h3>Legumes &amp; Whole Pulses</h3>
+            <p>Kidney beans, chickpeas, and whole moong</p>
+          </div>
+          <div class="category-card reveal reveal-delay-3" data-category="millets">
+            <div class="category-img">
+              <img src="images/cat-millets.png" alt="Millets" />
+            </div>
+            <h3>Millets</h3>
+            <p>Ragi, bajra, jowar, and foxtail millet</p>
+          </div>
+          <div class="category-card reveal reveal-delay-4" data-category="spices">
+            <div class="category-img">
+              <img src="images/cat-spices.png" alt="Spices" />
+            </div>
+            <h3>Spices</h3>
+            <p>Authentic flavors from across the nation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== INGREDIENT UNIVERSE — REDESIGNED ===== -->
   <section class="iu-section" id="ingredients">
     <div class="container">
-
-      <!-- HORIZONTAL CATEGORY TABS -->
-      <div class="iu-category-tabs" id="iuCategoryTabs">
-        <button class="iu-tab-btn active" data-category="grains">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          Grains &amp; Cereals
-          <span class="iu-tab-count">5</span>
-        </button>
-        <button class="iu-tab-btn" data-category="pulses">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 1 8 0"/></svg>
-          Pulses
-          <span class="iu-tab-count">6</span>
-        </button>
-        <button class="iu-tab-btn" data-category="legumes">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><ellipse cx="12" cy="12" rx="8" ry="5"/></svg>
-          Legumes
-          <span class="iu-tab-count">6</span>
-        </button>
-        <button class="iu-tab-btn" data-category="millets">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M12 22V8M5 12l7-4 7 4M5 16l7-4 7 4"/></svg>
-          Millets
-          <span class="iu-tab-count">8</span>
-        </button>
-        <button class="iu-tab-btn" data-category="spices">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Spices
-          <span class="iu-tab-count">3</span>
-        </button>
-      </div>
-
-      <!-- CONTENT: Heading + Sub-Filters + Grid -->
+      <!-- CONTENT: Grid -->
       <div class="iu-content">
-        <div class="iu-content-header">
-          <h2 id="iuTitle">Grains &amp; Cereals</h2>
-          <p id="iuSubtitle">Premium quality grains sourced from India's finest agricultural regions</p>
-        </div>
-
-        <!-- HORIZONTAL FILTER PILLS (product-level) -->
-        <div class="iu-filters-row" id="iuFiltersRow">
-          <!-- Injected by JS -->
-        </div>
-
         <div class="iu-grid" id="iuGrid">
           <!-- Cards injected by JS -->
         </div>
@@ -252,44 +271,17 @@
     };
 
     // ── DOM refs ──
-    const tabBtns = document.querySelectorAll('.iu-tab-btn');
-    const filtersRow = document.getElementById('iuFiltersRow');
+    const categoryCards = document.querySelectorAll('.category-card');
     const grid = document.getElementById('iuGrid');
-    const titleEl = document.getElementById('iuTitle');
-    const subtitleEl = document.getElementById('iuSubtitle');
 
     let currentCategory = 'grains';
-    let currentFilter = 'all';
 
-    // Build filter pills for a category
-    function renderFilters(key) {
-      const cat = productData[key];
-      if (!cat) return;
-      const names = cat.products.map(p => p.name);
-      filtersRow.innerHTML =
-        `<button class="iu-filter-pill active" data-filter="all">All</button>` +
-        names.map(n => `<button class="iu-filter-pill" data-filter="${n}">${n}</button>`).join('');
-
-      // Attach filter events
-      filtersRow.querySelectorAll('.iu-filter-pill').forEach(pill => {
-        pill.addEventListener('click', () => {
-          currentFilter = pill.dataset.filter;
-          filtersRow.querySelectorAll('.iu-filter-pill').forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-          renderCards(key, currentFilter);
-        });
-      });
-    }
-
-    // Render product cards (with optional filter)
-    function renderCards(key, filter) {
+    // Render product cards for a category
+    function renderCards(key) {
       const cat = productData[key];
       if (!cat) return;
 
-      let items = cat.products;
-      if (filter && filter !== 'all') {
-        items = items.filter(p => p.name === filter);
-      }
+      const items = cat.products;
 
       grid.classList.add('iu-grid-fade');
 
@@ -316,22 +308,35 @@
       const cat = productData[key];
       if (!cat) return;
       currentCategory = key;
-      currentFilter = 'all';
 
-      titleEl.textContent = cat.title;
-      subtitleEl.textContent = cat.subtitle;
+      // Update active category card
+      categoryCards.forEach(card => card.classList.remove('active'));
+      document.querySelector(`.category-card[data-category="${key}"]`)?.classList.add('active');
 
-      // Update active tab
-      tabBtns.forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`[data-category="${key}"]`)?.classList.add('active');
+      // Scroll to ingredients section smoothly
+      const ingredientsSection = document.getElementById('ingredients');
+      if (ingredientsSection) {
+        const header = document.getElementById('header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        const targetPosition = ingredientsSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-      renderFilters(key);
-      renderCards(key, 'all');
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+
+      renderCards(key);
     }
 
-    // ── Tab click events ──
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => renderCategory(btn.dataset.category));
+    // ── Category card click events ──
+    categoryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const category = card.dataset.category;
+        if (category) {
+          renderCategory(category);
+        }
+      });
     });
 
     // ── Initial render ──

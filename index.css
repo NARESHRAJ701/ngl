@@ -924,15 +924,12 @@ p {
 
 .sol-image-wrapper {
   position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
 }
 
 .sol-image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -1176,6 +1173,7 @@ p {
 .category-card {
   background: var(--white);
   border-radius: 16px;
+  cursor: pointer;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   opacity: 0.85;
@@ -1193,6 +1191,24 @@ p {
 .category-card:hover {
   opacity: 1;
   transform: translateY(-10px) scale(1.04);
+}
+
+/* ── Card active state ── */
+.category-card.active {
+  opacity: 1;
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(15, 61, 46, 0.25);
+  border: 2px solid #0f3d2e;
+}
+
+.category-card.active h3 {
+  color: #0f3d2e;
+}
+
+.category-card.active .category-img::after {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(15, 61, 46, 0.15), rgba(10, 82, 51, 0.1));
+}
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(10, 82, 51, 0.08);
   border-color: rgba(10, 82, 51, 0.15);
