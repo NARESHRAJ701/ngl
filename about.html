@@ -130,23 +130,105 @@
         <!-- SVG Curved Path -->
         <svg class="cp-svg-path" viewBox="0 0 1000 1700" fill="none" xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid meet">
+          <!-- Background path -->
           <path class="cp-path-bg"
             d="M500 -50 C500 100, 180 140, 180 240 S500 380, 500 380 C500 380, 820 420, 820 520 S500 660, 500 660 C500 660, 180 700, 180 800 S500 940, 500 940 C500 940, 820 980, 820 1080 S500 1220, 500 1220 C500 1220, 180 1260, 180 1360 S500 1500, 500 1600"
             stroke="rgba(17,55,33,0.1)" stroke-width="2" fill="none" stroke-linecap="round" />
+          
+          <!-- Dotted path for animation -->
           <path class="cp-path-dots"
             d="M500 -50 C500 100, 180 140, 180 240 S500 380, 500 380 C500 380, 820 420, 820 520 S500 660, 500 660 C500 660, 180 700, 180 800 S500 940, 500 940 C500 940, 820 980, 820 1080 S500 1220, 500 1220 C500 1220, 180 1260, 180 1360 S500 1500, 500 1600"
             stroke="rgba(17,55,33,0.06)" stroke-width="1" fill="none" stroke-dasharray="4 8" stroke-linecap="round"
             transform="translate(10, 0)" />
+          
+          <!-- Main animated path -->
           <path class="cp-path-fill" id="cpPathFill"
             d="M500 -50 C500 100, 180 140, 180 240 S500 380, 500 380 C500 380, 820 420, 820 520 S500 660, 500 660 C500 660, 180 700, 180 800 S500 940, 500 940 C500 940, 820 980, 820 1080 S500 1220, 500 1220 C500 1220, 180 1260, 180 1360 S500 1500, 500 1600"
             stroke="#113721" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          
+          <!-- Directional arrows along the path -->
+          <g class="cp-arrows" opacity="0.4">
+            <defs>
+              <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#113721" />
+              </marker>
+            </defs>
+            
+            <!-- Arrow 1 -->
+            <path d="M500 50 L490 60" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 0s"/>
+            
+            <!-- Arrow 2 -->
+            <path d="M250 200 L240 210" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 0.5s"/>
+            
+            <!-- Arrow 3 -->
+            <path d="M500 380 L510 390" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 1s"/>
+            
+            <!-- Arrow 4 -->
+            <path d="M750 480 L760 490" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 1.5s"/>
+            
+            <!-- Arrow 5 -->
+            <path d="M500 660 L490 670" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 2s"/>
+            
+            <!-- Arrow 6 -->
+            <path d="M250 760 L240 770" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 2.5s"/>
+            
+            <!-- Arrow 7 -->
+            <path d="M500 940 L510 950" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 3s"/>
+            
+            <!-- Arrow 8 -->
+            <path d="M750 1040 L760 1050" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 3.5s"/>
+            
+            <!-- Arrow 9 -->
+            <path d="M500 1220 L490 1230" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 4s"/>
+            
+            <!-- Arrow 10 -->
+            <path d="M250 1320 L240 1330" stroke="#113721" stroke-width="2" marker-end="url(#arrowhead)" class="cp-arrow" style="animation-delay: 4.5s"/>
+          </g>
+          
+          <!-- Traveling dot -->
           <circle class="cp-travel-dot" id="cpTravelDot" cx="500" cy="-50" r="6" fill="#113721" />
         </svg>
 
         <!-- Visual Anchors -->
         <div class="cp-anchor cp-anchor-start reveal">
           <div class="cp-anchor-visual">
-            <img src="farm_illustration_1777562231548.png" alt="Farm Origin" />
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Sun -->
+              <circle cx="90" cy="25" r="12" fill="#FFB84D" opacity="0.9"/>
+              <circle cx="90" cy="25" r="8" fill="#FFA726" opacity="0.7"/>
+              
+              <!-- Hills/Fields -->
+              <path d="M0 70 Q30 50 60 70 T120 70 L120 120 L0 120 Z" fill="#6B8E23" opacity="0.3"/>
+              <path d="M0 80 Q40 60 80 80 T120 80 L120 120 L0 120 Z" fill="#7BA428" opacity="0.4"/>
+              <path d="M0 90 Q30 75 60 90 T120 90 L120 120 L0 120 Z" fill="#8FBC2E" opacity="0.5"/>
+              
+              <!-- Wheat stalks -->
+              <g opacity="0.8">
+                <line x1="35" y1="95" x2="35" y2="75" stroke="#8B7355" stroke-width="1.5"/>
+                <ellipse cx="35" cy="73" rx="3" ry="5" fill="#D4AF37"/>
+                <ellipse cx="35" cy="78" rx="2.5" ry="4" fill="#D4AF37"/>
+                
+                <line x1="45" y1="100" x2="45" y2="82" stroke="#8B7355" stroke-width="1.5"/>
+                <ellipse cx="45" cy="80" rx="3" ry="5" fill="#D4AF37"/>
+                <ellipse cx="45" cy="85" rx="2.5" ry="4" fill="#D4AF37"/>
+                
+                <line x1="55" y1="98" x2="55" y2="78" stroke="#8B7355" stroke-width="1.5"/>
+                <ellipse cx="55" cy="76" rx="3" ry="5" fill="#D4AF37"/>
+                <ellipse cx="55" cy="81" rx="2.5" ry="4" fill="#D4AF37"/>
+              </g>
+              
+              <!-- Farmer silhouette -->
+              <g opacity="0.6" transform="translate(70, 75)">
+                <circle cx="0" cy="0" r="4" fill="#113721"/>
+                <rect x="-3" y="4" width="6" height="10" rx="1" fill="#113721"/>
+                <line x1="-3" y1="6" x2="-7" y2="10" stroke="#113721" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="3" y1="6" x2="7" y2="10" stroke="#113721" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+              
+              <!-- Decorative leaves -->
+              <path d="M15 45 Q20 40 25 45 Q20 50 15 45" fill="#4A7C2F" opacity="0.4"/>
+              <path d="M100 55 Q105 50 110 55 Q105 60 100 55" fill="#4A7C2F" opacity="0.4"/>
+            </svg>
             <div class="cp-anchor-glow"></div>
           </div>
           <span class="cp-anchor-label">Farm Origin</span>
@@ -154,7 +236,75 @@
 
         <div class="cp-anchor cp-anchor-end reveal">
           <div class="cp-anchor-visual">
-            <img src="market_shelf_illustration_1777562246388.png" alt="Retail Shelf" />
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Shelf structure -->
+              <rect x="10" y="30" width="100" height="3" fill="#8B7355" rx="1"/>
+              <rect x="10" y="60" width="100" height="3" fill="#8B7355" rx="1"/>
+              <rect x="10" y="90" width="100" height="3" fill="#8B7355" rx="1"/>
+              
+              <!-- Vertical supports -->
+              <rect x="10" y="30" width="3" height="63" fill="#6B5D4F" opacity="0.6"/>
+              <rect x="107" y="30" width="3" height="63" fill="#6B5D4F" opacity="0.6"/>
+              
+              <!-- Products on top shelf -->
+              <g opacity="0.9">
+                <!-- Jar 1 -->
+                <rect x="18" y="15" width="12" height="14" rx="1" fill="#E8F5E9" stroke="#113721" stroke-width="0.8"/>
+                <rect x="18" y="15" width="12" height="3" fill="#113721" opacity="0.3"/>
+                <circle cx="24" cy="22" r="1.5" fill="#D4AF37"/>
+                
+                <!-- Pouch 1 -->
+                <path d="M35 18 L45 18 L44 29 L36 29 Z" fill="#FFF3E0" stroke="#FF9800" stroke-width="0.8"/>
+                <rect x="37" y="20" width="5" height="2" fill="#FF9800" opacity="0.4"/>
+                
+                <!-- Box 1 -->
+                <rect x="50" y="16" width="14" height="13" rx="1" fill="#E3F2FD" stroke="#2196F3" stroke-width="0.8"/>
+                <line x1="52" y1="20" x2="62" y2="20" stroke="#2196F3" stroke-width="0.5" opacity="0.5"/>
+                <line x1="52" y1="23" x2="62" y2="23" stroke="#2196F3" stroke-width="0.5" opacity="0.5"/>
+              </g>
+              
+              <!-- Products on middle shelf -->
+              <g opacity="0.9">
+                <!-- Jar 2 -->
+                <rect x="15" y="45" width="13" height="14" rx="1" fill="#FFF8E1" stroke="#F57C00" stroke-width="0.8"/>
+                <rect x="15" y="45" width="13" height="3" fill="#F57C00" opacity="0.3"/>
+                <circle cx="21.5" cy="52" r="1.5" fill="#8B4513"/>
+                
+                <!-- Pouch 2 -->
+                <path d="M33 47 L44 47 L43 59 L34 59 Z" fill="#F3E5F5" stroke="#9C27B0" stroke-width="0.8"/>
+                <rect x="35" y="50" width="6" height="2" fill="#9C27B0" opacity="0.4"/>
+                
+                <!-- Box 2 -->
+                <rect x="49" y="46" width="15" height="13" rx="1" fill="#E8F5E9" stroke="#4CAF50" stroke-width="0.8"/>
+                <line x1="51" y1="50" x2="62" y2="50" stroke="#4CAF50" stroke-width="0.5" opacity="0.5"/>
+                <line x1="51" y1="53" x2="62" y2="53" stroke="#4CAF50" stroke-width="0.5" opacity="0.5"/>
+                
+                <!-- Jar 3 -->
+                <rect x="69" y="45" width="12" height="14" rx="1" fill="#FCE4EC" stroke="#E91E63" stroke-width="0.8"/>
+                <rect x="69" y="45" width="12" height="3" fill="#E91E63" opacity="0.3"/>
+              </g>
+              
+              <!-- Products on bottom shelf -->
+              <g opacity="0.9">
+                <!-- Large box -->
+                <rect x="18" y="75" width="18" height="14" rx="1" fill="#FFF3E0" stroke="#FF9800" stroke-width="0.8"/>
+                <line x1="20" y1="79" x2="34" y2="79" stroke="#FF9800" stroke-width="0.5" opacity="0.5"/>
+                <line x1="20" y1="82" x2="34" y2="82" stroke="#FF9800" stroke-width="0.5" opacity="0.5"/>
+                
+                <!-- Pouch 3 -->
+                <path d="M41 77 L52 77 L51 89 L42 89 Z" fill="#E1F5FE" stroke="#03A9F4" stroke-width="0.8"/>
+                <rect x="43" y="80" width="6" height="2" fill="#03A9F4" opacity="0.4"/>
+                
+                <!-- Jar 4 -->
+                <rect x="57" y="75" width="13" height="14" rx="1" fill="#F1F8E9" stroke="#8BC34A" stroke-width="0.8"/>
+                <rect x="57" y="75" width="13" height="3" fill="#8BC34A" opacity="0.3"/>
+              </g>
+              
+              <!-- Sparkle effects -->
+              <circle cx="25" cy="12" r="1" fill="#FFD700" opacity="0.6"/>
+              <circle cx="85" cy="42" r="1" fill="#FFD700" opacity="0.6"/>
+              <circle cx="95" cy="72" r="1" fill="#FFD700" opacity="0.6"/>
+            </svg>
             <div class="cp-anchor-glow"></div>
           </div>
           <span class="cp-anchor-label">Retail / Market Shelf</span>
@@ -373,6 +523,7 @@
       const pathFill = document.getElementById('cpPathFill');
       const travelDot = document.getElementById('cpTravelDot');
       const steps = section.querySelectorAll('.cp-step');
+      const anchors = section.querySelectorAll('.cp-anchor');
       const wrapper = section.querySelector('.cp-wrapper');
 
       // Get path length for stroke-dasharray animation
@@ -391,7 +542,7 @@
         const progress = Math.min(1, Math.max(0, (0 - start) / (end - start)));
 
         // Desktop: draw SVG path
-        if (pathFill && pathLength) {
+        if (window.innerWidth > 768 && pathFill && pathLength) {
           pathFill.style.strokeDashoffset = pathLength * (1 - progress);
 
           if (travelDot && progress > 0.01 && progress < 0.99) {
@@ -405,16 +556,24 @@
         }
 
         // Mobile: fill vertical line via CSS custom property
-        if (wrapper) {
-          wrapper.style.setProperty('--cp-mobile-fill', (progress * 100) + '%');
+        if (window.innerWidth <= 768 && wrapper) {
+          // Calculate mobile progress based on wrapper height
+          const wrapperRect = wrapper.getBoundingClientRect();
+          const wrapperStart = wrapperRect.top - viewH * 0.7;
+          const wrapperEnd = wrapperRect.top + wrapperRect.height - viewH * 0.4;
+          const mobileProgress = Math.min(1, Math.max(0, (0 - wrapperStart) / (wrapperEnd - wrapperStart)));
+          
+          const maxHeight = wrapperRect.height - 240; // Account for anchors
+          wrapper.style.setProperty('--cp-mobile-fill', (mobileProgress * maxHeight) + 'px');
         }
       }
 
       window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
       onScroll();
 
       // IntersectionObserver for step card reveal
-      const observer = new IntersectionObserver((entries) => {
+      const stepObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('cp-visible');
@@ -422,7 +581,18 @@
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-      steps.forEach(step => observer.observe(step));
+      steps.forEach(step => stepObserver.observe(step));
+
+      // IntersectionObserver for anchor reveal
+      const anchorObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+
+      anchors.forEach(anchor => anchorObserver.observe(anchor));
     })();
   </script>
   <script>
