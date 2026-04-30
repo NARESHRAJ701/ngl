@@ -137,12 +137,6 @@
         <div class="iu-grid" id="iuGrid">
           <!-- Cards injected by JS -->
         </div>
-
-        <!-- Private Label info -->
-        <div class="iu-private-label-bar">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <p>All products available for <strong>Private Labeling</strong></p>
-        </div>
       </div>
 
     </div>
@@ -290,7 +284,6 @@
               <img src="${p.img}" alt="${p.name}" loading="lazy" />
               <div class="iu-card-overlay"></div>
               <span class="iu-card-name">${p.name}</span>
-              <span class="iu-card-badge">Private Label</span>
             </div>
           </div>
         `).join('');
@@ -338,10 +331,12 @@
     });
 
     // ── Initial render ──
+    // Keep grid empty on initial load - only render when user selects a category
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get('category');
-    const initialCategory = categoryParam && productData[categoryParam] ? categoryParam : 'grains';
-    renderCategory(initialCategory);
+    if (categoryParam && productData[categoryParam]) {
+      renderCategory(categoryParam);
+    }
   </script>
 
 </body>

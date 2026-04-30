@@ -1225,13 +1225,6 @@ p {
   perspective: 1000px;
 }
 
-/* ── Cards — premium interactive dimming on grid hover ── */
-.categories-grid:hover .category-card {
-  opacity: 0.5;
-  transform: scale(0.96);
-  filter: blur(1px);
-}
-
 .categories-grid:hover .category-card:hover {
   opacity: 1;
   transform: translateY(-10px) scale(1.04);
@@ -1982,7 +1975,7 @@ p {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.7s var(--ease);
+  transition: all 0.3s var(--ease);
 }
 
 .reveal.visible {
@@ -1999,22 +1992,22 @@ p {
 }
 
 .reveal-delay-3 {
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 
 .reveal-delay-4 {
-  transition-delay: 0.4s;
+  transition-delay: 0.3s;
 }
 
 .reveal-delay-5 {
-  transition-delay: 0.5s;
+  transition-delay: 0.1s;
 }
 
 /* Split reveal animations */
 .reveal-left {
   opacity: 0;
   transform: translateX(-40px);
-  transition: all 0.8s var(--ease);
+  transition: all 0.3s var(--ease);
 }
 
 .reveal-left.visible {
@@ -2025,7 +2018,7 @@ p {
 .reveal-right {
   opacity: 0;
   transform: translateX(40px);
-  transition: all 0.8s var(--ease);
+  transition: all 0.3s var(--ease);
 }
 
 .reveal-right.visible {
