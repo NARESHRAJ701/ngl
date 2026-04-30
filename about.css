@@ -6,7 +6,7 @@
 /* ── Shared label ── */
 .about-section-label {
   display: inline-block;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2.5px;
@@ -54,7 +54,7 @@
 
 .about-hero-label {
   display: inline-block;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -64,9 +64,9 @@
 }
 
 .about-hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(36px, 5vw, 60px);
-  font-weight: 500;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.3px;
   line-height: 1.15;
@@ -74,7 +74,7 @@
 }
 
 .about-hero p {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 17px;
   color: rgba(255, 255, 255, 0.55);
   max-width: 600px;
@@ -97,7 +97,7 @@
   padding: 14px 32px;
   background: #ffffff;
   color: #113721;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 14px;
   font-weight: 600;
   border-radius: 10px;
@@ -117,7 +117,7 @@
   padding: 14px 32px;
   background: transparent;
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 14px;
   font-weight: 500;
   border-radius: 10px;
@@ -162,16 +162,16 @@
 }
 
 .about-who-text h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 500;
+  font-weight: 700;
   color: #1a1a1a;
   letter-spacing: 0.3px;
   margin-bottom: 20px;
 }
 
 .about-who-text p {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 15px;
   color: #666;
   line-height: 1.75;
@@ -193,14 +193,14 @@
 }
 
 .about-stat-number {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: 32px;
   font-weight: 600;
   color: #113721;
 }
 
 .about-stat-label {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 12px;
   font-weight: 500;
   color: #999;
@@ -254,16 +254,16 @@
 }
 
 .cp-header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 500;
+  font-weight: 700;
   color: #1a1a1a;
   letter-spacing: 0.3px;
   margin-bottom: 12px;
 }
 
 .cp-header p {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 15px;
   color: #888;
   line-height: 1.7;
@@ -274,6 +274,7 @@
   max-width: 960px;
   margin: 0 auto;
   min-height: 1200px;
+  padding: 100px 0;
 }
 
 .cp-svg-path {
@@ -290,10 +291,94 @@
   transition: stroke-dashoffset 0.05s linear;
 }
 
+.cp-path-dots {
+  animation: dotsFlow 60s linear infinite;
+}
+
+@keyframes dotsFlow {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
 .cp-travel-dot {
   opacity: 0;
   transition: opacity 0.3s ease;
   filter: drop-shadow(0 0 8px rgba(17, 55, 33, 0.35));
+}
+
+/* ── Visual Anchors (Farm & Shelf) ── */
+.cp-anchor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+}
+
+.cp-anchor-start {
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cp-anchor-end {
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cp-anchor-visual {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(17, 55, 33, 0.05);
+  animation: anchorFloat 3s ease-in-out infinite;
+}
+
+.cp-anchor-end .cp-anchor-visual {
+  animation-delay: 1.5s;
+}
+
+.cp-anchor-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.cp-anchor-glow {
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle, rgba(17, 55, 33, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.6;
+  animation: anchorGlow 3s ease-in-out infinite;
+}
+
+.cp-anchor-label {
+  font-family: 'Montserrat', var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #113721;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+@keyframes anchorFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes anchorGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
 }
 
 .cp-deco {
@@ -360,7 +445,7 @@
 }
 
 .cp-step-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   color: rgba(17, 55, 33, 0.2);
@@ -392,16 +477,16 @@
 }
 
 .cp-step-card h3 {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 8px;
   letter-spacing: 0;
 }
 
 .cp-step-card p {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 14px;
   color: #888;
   line-height: 1.7;
@@ -421,9 +506,9 @@
 }
 
 .about-why-header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 500;
+  font-weight: 700;
   color: #1a1a1a;
   letter-spacing: 0.3px;
 }
@@ -469,15 +554,15 @@
 }
 
 .about-why-card h3 {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 10px;
 }
 
 .about-why-card p {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 13px;
   color: #888;
   line-height: 1.65;
@@ -523,9 +608,9 @@
 }
 
 .about-cta-inner h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(26px, 3.5vw, 38px);
-  font-weight: 500;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.3px;
   margin-bottom: 14px;
@@ -534,7 +619,7 @@
 }
 
 .about-cta-inner p {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 15px;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
@@ -564,7 +649,7 @@
 }
 
 .about-tagline-text {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(16px, 2vw, 20px);
   font-weight: 500;
   font-style: italic;
@@ -724,6 +809,25 @@
     background: #113721;
     border-color: #113721;
     box-shadow: 0 0 0 4px rgba(17, 55, 33, 0.1);
+  }
+
+  .cp-anchor {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 40px;
+  }
+
+  .cp-anchor-visual {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cp-anchor-end {
+    margin-top: 40px;
+    margin-bottom: 0;
   }
 
   .cp-deco {

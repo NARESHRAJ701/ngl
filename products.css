@@ -35,7 +35,7 @@
 
 .page-hero-label {
   display: inline-block;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -45,9 +45,9 @@
 }
 
 .page-hero h1 {
-  font-family: 'Playfair Display', var(--font-heading);
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(40px, 5.5vw, 64px);
-  font-weight: 500;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.5px;
   line-height: 1.1;
@@ -103,7 +103,7 @@
   background: #ffffff;
   border: 1.5px solid #e0e0e0;
   border-radius: 999px;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 14px;
   font-weight: 500;
   color: #4a4a4a;
@@ -167,9 +167,9 @@
 }
 
 .iu-content-header h2 {
-  font-family: 'Playfair Display', var(--font-heading);
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(28px, 3vw, 40px);
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-dark);
   letter-spacing: 0.3px;
   margin-bottom: 8px;
@@ -202,7 +202,7 @@
   background: #ffffff;
   border: 1.5px solid #e2e2e2;
   border-radius: 999px;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 13px;
   font-weight: 500;
   color: #5a5a5a;
@@ -311,7 +311,7 @@
   bottom: 16px;
   left: 16px;
   right: 16px;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 15px;
   font-weight: 600;
   color: #ffffff;
@@ -325,7 +325,7 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -364,7 +364,7 @@
 }
 
 .iu-private-label-bar p {
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.5;
@@ -424,9 +424,9 @@
 }
 
 .iu-cta-text h2 {
-  font-family: 'Playfair Display', var(--font-heading);
+  font-family: 'Montserrat', var(--font-heading);
   font-size: clamp(24px, 3vw, 34px);
-  font-weight: 500;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.3px;
   line-height: 1.2;
@@ -447,7 +447,7 @@
   padding: 16px 32px;
   background: #ffffff;
   color: #04321C;
-  font-family: 'Inter', var(--font-body);
+  font-family: 'Montserrat', var(--font-body);
   font-size: 14px;
   font-weight: 600;
   border-radius: 12px;
