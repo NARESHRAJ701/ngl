@@ -194,7 +194,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="https://wa.me/919950895333" target="_blank">WhatsApp</a>
+          <a href="https://wa.me/919950895333" target="_blank">Phone Number</a>
           <a href="https://instagram.com" target="_blank">Instagram</a>
           <a href="mailto:info@nutrigainlabs.com">Email</a>
         </div>
@@ -207,76 +207,92 @@
 
   <script src="main.js"></script>
   <script>
+    // ── Dynamic image path generator ──
+    // Rules: lowercase → spaces to hyphens → remove special chars like () → .jpg
+    function getProductImg(name) {
+      const formatted = name
+        .toLowerCase()
+        .replace(/\s+/g, '-')       // spaces → hyphens
+        .replace(/[()]/g, '')       // remove parentheses
+        .replace(/-+/g, '-')        // collapse multiple hyphens
+        .replace(/^-|-$/g, '');     // trim leading/trailing hyphens
+      return `images/${formatted}.jpg`;
+    }
+
     // ── Product Data ──
+    // img field uses actual local filenames (some differ from dynamic rule due to real file names)
     const productData = {
       grains: {
         title: "Grains & Cereals",
         subtitle: "Premium quality grains sourced from India's finest agricultural regions",
         products: [
-          { name: "Wheat", img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=500&fit=crop" },
-          { name: "Rice", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=500&fit=crop" },
-          { name: "Maize", img: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=600&h=500&fit=crop" },
-          { name: "Barley", img: "https://images.unsplash.com/photo-1777000509637-1137fcb6f44a?w=600&h=500&fit=crop" },
-          { name: "Poha", img: "https://images.unsplash.com/photo-1777000298649-1020178de90e?w=600&h=500&fit=crop" }
+          { name: "Wheat" },
+          { name: "Rice" },
+          { name: "Maize", img: "images/maize.jpeg" },
+          { name: "Barley" },
+          { name: "Poha", img: "images/Poha.jpg" }
         ]
       },
       pulses: {
         title: "Pulses",
         subtitle: "High-protein staples processed with multi-stage cleaning and sorting",
         products: [
-          { name: "Chana Dal", img: "https://images.unsplash.com/photo-1777000347542-45454d81adb3?w=600&h=500&fit=crop" },
-          { name: "Toor Dal (Arhar)", img: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=600&h=500&fit=crop" },
-          { name: "Moong Dal", img: "https://plus.unsplash.com/premium_photo-1674025751520-01102eca6352?w=600&h=500&fit=crop" },
-          { name: "Urad Dal", img: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=500&fit=crop" },
-          { name: "Masoor Dal", img: "https://plus.unsplash.com/premium_photo-1701064865216-4306843a809f?w=600&h=500&fit=crop" },
-          { name: "Mix Dal Blends", img: "https://images.unsplash.com/photo-1585996068879-3c34bba5a4c0?w=600&h=500&fit=crop" }
+          { name: "Chana Dal", img: "images/chana-dal.png" },
+          { name: "Toor Dal (Arhar)", img: "images/toordal.jpg" },
+          { name: "Moong Dal", img: "images/moongdal.jpg" },
+          { name: "Urad Dal", img: "images/uraddal.jpg" },
+          { name: "Masoor Dal", img: "images/masoordal.jpg" },
+          { name: "Mix Dal Blends", img: "images/mix dal blends.jpeg" }
         ]
       },
       legumes: {
         title: "Legumes & Whole Pulses",
         subtitle: "Whole legumes and pulses for diverse culinary and industrial applications",
         products: [
-          { name: "Peanut", img: "https://plus.unsplash.com/premium_photo-1726072356924-e29e8999df09?w=600&h=500&fit=crop" },
-          { name: "Kabuli Chana", img: "https://images.unsplash.com/photo-1777000347542-45454d81adb3?w=600&h=500&fit=crop" },
-          { name: "Desi Chana", img: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=600&h=500&fit=crop" },
-          { name: "Whole Moong", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=500&fit=crop" },
-          { name: "Whole Urad", img: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=500&fit=crop" },
-          { name: "Vatana (Peas)", img: "https://images.unsplash.com/photo-1777016806026-cae8c0f9cf90?w=600&h=500&fit=crop" }
+          { name: "Peanut", img: "images/peanuts.png" },
+          { name: "Kabuli Chana", img: "images/kabulichana.jpg" },
+          { name: "Desi Chana", img: "images/desi-chana.jpg" },
+          { name: "Whole Moong", img: "images/whole-moong.jpg" },
+          { name: "Whole Urad", img: "images/whole urad.jpg" },
+          { name: "Vatana (Peas)", img: "images/Green-Vatana.jpg" }
         ]
       },
       millets: {
         title: "Millets",
         subtitle: "The super-grain series — ancient grains for modern nutrition",
         products: [
-          { name: "Bajra (Pearl Millet)", img: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=500&fit=crop" },
-          { name: "Jowar (Sorghum)", img: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=600&h=500&fit=crop" },
-          { name: "Ragi (Finger Millet)", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=500&fit=crop" },
-          { name: "Foxtail Millet", img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=500&fit=crop" },
-          { name: "Little Millet", img: "https://images.unsplash.com/photo-1777016722334-f569eb436607?w=600&h=500&fit=crop" },
-          { name: "Barnyard Millet", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=500&fit=crop" },
-          { name: "Kodo Millet", img: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=500&fit=crop" },
-          { name: "Proso Millet", img: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=600&h=500&fit=crop" }
+          { name: "Bajra (Pearl Millet)", img: "images/bajra.png" },
+          { name: "Jowar (Sorghum)", img: "images/jowar.jpg" },
+          { name: "Ragi (Finger Millet)", img: "images/ragi.jpg" },
+          { name: "Foxtail Millet", img: "images/foxtail.jpg" },
+          { name: "Little Millet", img: "images/little millet.png" },
+          { name: "Barnyard Millet", img: "images/BarnyardMillet.png" },
+          { name: "Kodo Millet", img: "images/kodo millet.png" },
+          { name: "Proso Millet", img: "images/proso-millets.png" }
         ]
       },
       spices: {
         title: "Spices",
         subtitle: "Purity-tested aromatic seeds for international markets and domestic processing",
         products: [
-          { name: "Jeera (Cumin Seeds)", img: "https://plus.unsplash.com/premium_photo-1725646220374-cef10998bd8b?w=600&h=500&fit=crop" },
-          { name: "Saunf (Fennel Seeds)", img: "https://images.unsplash.com/photo-1701189975806-97b11541ec82?w=600&h=500&fit=crop" },
-          { name: "Methi (Fenugreek Seeds)", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=500&fit=crop" }
+          { name: "Jeera (Cumin Seeds)", img: "images/cumin-seeds.png" },
+          { name: "Saunf (Fennel Seeds)", img: "images/FennelSeeds.png" },
+          { name: "Methi (Fenugreek Seeds)", img: "images/fenugreekseeds.png" },
+          { name: "Ajwain", img: "images/AJWAIN-1.png" },
+          { name: "Coriander", img: "images/coriander.png" },
+          { name: "Nigella Seeds", img: "images/Nigella.png" }
         ]
       },
       seeds: {
         title: "Seeds",
         subtitle: "Nutrient-rich seeds packed with essential minerals and omega-3 fatty acids",
         products: [
-          { name: "Chia Seeds", img: "https://images.unsplash.com/photo-1599599810694-b5ac4dd5e1f5?w=600&h=500&fit=crop" },
-          { name: "Flax Seeds", img: "https://images.unsplash.com/photo-1599599810545-f5d1c7c11e93?w=600&h=500&fit=crop" },
-          { name: "Sunflower Seeds", img: "https://images.unsplash.com/photo-1599599810999-2b1fcff6e9ff?w=600&h=500&fit=crop" },
-          { name: "Pumpkin Seeds", img: "https://images.unsplash.com/photo-1599599811113-0f82b0d0f4f9?w=600&h=500&fit=crop" },
-          { name: "Sesame Seeds", img: "https://images.unsplash.com/photo-1599599810999-1111111111ff?w=600&h=500&fit=crop" },
-          { name: "Hemp Seeds", img: "https://images.unsplash.com/photo-1599599810888-2222222222ff?w=600&h=500&fit=crop" }
+          { name: "Chia Seeds", img: "images/chia-seed.jpg" },
+          { name: "Flax Seeds", img: "images/flaxseed.jpg" },
+          { name: "Sunflower Seeds", img: "images/sunflower.jpg" },
+          { name: "Pumpkin Seeds", img: "images/pumpkin-seeds.jpg" },
+          { name: "Sesame Seeds", img: "images/Sesame-Seeds..jpg" },
+          { name: "Watermelon Seeds", img: "images/watermelon-seeds.jpg" }
         ]
       }
     };
@@ -286,6 +302,11 @@
     const grid = document.getElementById('iuGrid');
 
     let currentCategory = 'grains';
+
+    // Resolve image: use explicit img if provided, else generate dynamically
+    function resolveImg(product) {
+      return product.img ? product.img : getProductImg(product.name);
+    }
 
     // Render product cards for a category
     function renderCards(key) {
@@ -300,7 +321,7 @@
         grid.innerHTML = items.map(p => `
           <div class="iu-card">
             <div class="iu-card-img">
-              <img src="${p.img}" alt="${p.name}" loading="lazy" />
+              <img src="${resolveImg(p)}" alt="${p.name}" loading="lazy" />
               <div class="iu-card-overlay"></div>
               <span class="iu-card-name">${p.name}</span>
             </div>
