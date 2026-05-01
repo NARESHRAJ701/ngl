@@ -83,6 +83,8 @@
 .iu-section {
   padding: 56px 0 100px;
   background: var(--light-bg);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 800px;
 }
 
 /* ── Category Tabs (horizontal row) ── */
@@ -280,6 +282,7 @@
   aspect-ratio: 6 / 5;
   height: auto;
   overflow: hidden;
+  will-change: transform;
 }
 
 .iu-card-img img {
