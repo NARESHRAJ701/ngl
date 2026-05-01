@@ -27,7 +27,7 @@
       </nav>
 
       <a href="index.html" class="header-logo" id="headerLogo">
-        <img src="images/header-logo.png" alt="Nutrigrain Labs" class="header-logo-img" decoding="async" />
+        <img src="images/header-logo.png" alt="Nutrigrain Labs" class="header-logo-img" />
       </a>
 
       <nav class="nav-right" id="navRight">
@@ -91,42 +91,42 @@
         <div class="categories-grid">
           <div class="category-card reveal" data-category="grains">
             <div class="category-img">
-              <img src="images/cat-grains.png" alt="Grains and Cereals" loading="lazy" decoding="async" />
+              <img src="images/cat-grains.png" alt="Grains and Cereals" />
             </div>
             <h3>Grains &amp; Cereals</h3>
             <p>Premium rice, wheat, and cereal varieties</p>
           </div>
           <div class="category-card reveal reveal-delay-1" data-category="pulses">
             <div class="category-img">
-              <img src="images/cat-pulses.png" alt="Pulses" loading="lazy" decoding="async" />
+              <img src="images/cat-pulses.png" alt="Pulses" />
             </div>
             <h3>Pulses</h3>
             <p>Lentils, dals, and split pulses</p>
           </div>
           <div class="category-card reveal reveal-delay-2" data-category="legumes">
             <div class="category-img">
-              <img src="images/cat-legumes.png" alt="Legumes and Whole Pulses" loading="lazy" decoding="async" />
+              <img src="images/cat-legumes.png" alt="Legumes and Whole Pulses" />
             </div>
             <h3>Legumes &amp; Whole Pulses</h3>
             <p>Kidney beans, chickpeas, and whole moong</p>
           </div>
           <div class="category-card reveal reveal-delay-3" data-category="millets">
             <div class="category-img">
-              <img src="images/cat-millets.png" alt="Millets" loading="lazy" decoding="async" />
+              <img src="images/cat-millets.png" alt="Millets" />
             </div>
             <h3>Millets</h3>
             <p>Ragi, bajra, jowar, and foxtail millet</p>
           </div>
           <div class="category-card reveal reveal-delay-4" data-category="spices">
             <div class="category-img">
-              <img src="images/cat-spices.png" alt="Spices" loading="lazy" decoding="async" />
+              <img src="images/cat-spices.png" alt="Spices" />
             </div>
             <h3>Spices</h3>
             <p>Authentic flavors from across the nation</p>
           </div>
           <div class="category-card reveal reveal-delay-5" data-category="seeds">
             <div class="category-img">
-              <img src="images/cat-seeds.png" alt="Seeds" loading="lazy" decoding="async" />
+              <img src="images/cat-seeds.png" alt="Seeds" />
             </div>
             <h3>Seeds</h3>
             <p>Chia, flax, sunflower, and pumpkin seeds</p>
@@ -175,7 +175,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo footer-logo">
-            <img src="images/footer-logo.png" alt="Nutrigrain Labs" class="footer-logo-img" loading="lazy" decoding="async" />
+            <img src="images/footer-logo.png" alt="Nutrigrain Labs" class="footer-logo-img" />
           </a>
           <p class="footer-desc">Redefining industrial food processing with precision, technology, and global standards.
           </p>
@@ -318,11 +318,10 @@
       grid.classList.add('iu-grid-fade');
 
       setTimeout(() => {
-        grid.innerHTML = items.map((p, i) => `
+        grid.innerHTML = items.map(p => `
           <div class="iu-card">
             <div class="iu-card-img">
-              <img src="${resolveImg(p)}" alt="${p.name}" decoding="async"
-                ${i < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} />
+              <img src="${resolveImg(p)}" alt="${p.name}" />
               <div class="iu-card-overlay"></div>
               <span class="iu-card-name">${p.name}</span>
             </div>
